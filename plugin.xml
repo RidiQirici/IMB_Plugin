@@ -26,7 +26,11 @@
   <platform name="android"> 
 
     <source-file src="src/android/Plugin.java" target-dir="src/imb/ridiqirici/plugin/cordova/universal" />
-
+	<source-file src="src/android/KrijuesPrinter.java" target-dir="src/imb/ridiqirici/plugin/cordova/universal" />
+	<source-file src="src/android/Mesazh.java" target-dir="src/imb/ridiqirici/plugin/cordova/universal" />
+	<source-file src="src/android/Printer.java" target-dir="src/imb/ridiqirici/plugin/cordova/universal" />
+	<source-file src="src/android/PrinterEnum.java" target-dir="src/imb/ridiqirici/plugin/cordova/universal" />
+	<source-file src="src/android/PrinterWoosim.java" target-dir="src/imb/ridiqirici/plugin/cordova/universal" />
     <config-file target="res/xml/config.xml" parent="/*">
       <feature name="Plugin">
         <param name="android-package" value="imb.ridiqirici.plugin.cordova.universal.Plugin" />
