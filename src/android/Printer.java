@@ -4,11 +4,12 @@ import android.bluetooth.BluetoothDevice;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
+import android.util.Log;
 
 public abstract class Printer {
 
 	private String adresaPajisjes;
-	
+	private static final String LOG_TAG = "PRINTER";
 
 	public String getAdresaPajisjes() {
 		return adresaPajisjes;
@@ -19,15 +20,17 @@ public abstract class Printer {
 	}
 	
 	public Printer(){
+		Log.i(LOG_TAG, "Hyri ne klasen Printer");
 		BroadcastReceiver mReceiver = new BroadcastReceiver() {
 		    public void onReceive(Context context, Intent intent) {
 		        String action = intent.getAction();
-
+		        Log.i(LOG_TAG, "Kerkimi i bluetooth-it...");
 		        // When discovery finds a device
 		        if (BluetoothDevice.ACTION_FOUND.equals(action)) {
 		            // Get the BluetoothDevice object from the Intent
 		            BluetoothDevice device = intent.getParcelableExtra(BluetoothDevice.EXTRA_DEVICE);
 		            setAdresaPajisjes(device.getAddress());
+		            Log.i(LOG_TAG, "MAC adresa e pajisjes per tu lidhur eshte " + device.getAddress());
 		        }
 		    }
 		};
