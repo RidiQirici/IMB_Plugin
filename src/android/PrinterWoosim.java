@@ -2,6 +2,7 @@ package imb.ridiqirici.plugin.cordova.universal;
 
 import com.woosim.bt.*;
 
+import android.content.Context;
 import android.util.Log;
 import android.widget.Toast;
 
@@ -18,8 +19,8 @@ public class PrinterWoosim extends Printer{
 	private final static String UTF_8 = "UTF-8";
 	private static final String LOG_TAG = "WOOSIM_PRINTER";
 	
-	public PrinterWoosim(){
-		super();
+	public PrinterWoosim(Context context){
+		super(context);
 		Log.i(LOG_TAG, "Hyri ne klasen PrinterWoosim");
 		woosim = new WoosimPrinter();
 	}

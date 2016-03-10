@@ -1,10 +1,11 @@
 package imb.ridiqirici.plugin.cordova.universal;
 
-import org.apache.cordova.CallbackContext;
-import org.apache.cordova.CordovaPlugin;
+import org.apache.cordova.api.CallbackContext;
+import org.apache.cordova.api.CordovaPlugin;
 import org.json.JSONArray;
 import org.json.JSONException;
 
+import android.content.Context;
 import android.util.Log;
 
 public class Plugin extends CordovaPlugin {
@@ -15,9 +16,11 @@ public class Plugin extends CordovaPlugin {
 	
     @Override
     public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
+    	Context context=this.cordova.getActivity().getApplicationContext(); 
+    	
         if (PRINT_TEXT.equals(action)) {
         	Log.i(LOG_TAG, "Krijimi i printerit sipas llojit");
-        	Printer printeri = KrijuesPrinter.krijoPrinter(PrinterEnum.valueOf(args.getString(0)));
+        	Printer printeri = KrijuesPrinter.krijoPrinter(context, PrinterEnum.valueOf(args.getString(0)));
             String label = args.getString(1);
         	Mesazh pergjigje = printeri.printoText(label);
         	if (pergjigje.isStatusi())
@@ -34,7 +37,7 @@ public class Plugin extends CordovaPlugin {
         }
         else if (PRINT_TEXT_MEMAC.equals(action)) {
         	Log.i(LOG_TAG, "Krijimi i printerit sipas llojit me parameter macadress");
-        	Printer printeri = KrijuesPrinter.krijoPrinter(PrinterEnum.valueOf(args.getString(0)));
+        	Printer printeri = KrijuesPrinter.krijoPrinter(context, PrinterEnum.valueOf(args.getString(0)));
             String label = args.getString(1);
             String macaddress = args.getString(2);
         	Mesazh pergjigje = printeri.printoText(macaddress, label);
