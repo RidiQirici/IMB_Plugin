@@ -15,6 +15,14 @@ public class KrijuesPrinter {
 				Log.i(LOG_TAG, "Krijimi i printeri WOOSIM");
 				printerKrijuar =  new PrinterWoosim(contex);
 				break;
+			case ZEBRA:
+				Log.i(LOG_TAG, "Krijimi i printeri ZEBRA");
+				printerKrijuar =  new PrinterZebra(contex);
+				break;
+			case PC700:
+				Log.i(LOG_TAG, "Krijimi i printeri PC700");
+				printerKrijuar =  new PrinterPC700(contex);
+				break;
 			default:
 				break;
 				

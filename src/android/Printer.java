@@ -23,6 +23,10 @@ public abstract class Printer {
 		this.adresaPajisjes = adresaPajisjes;
 	}
 	
+	public Printer(){
+		Log.i(LOG_TAG, "Hyri ne klasen Printer pa parametra");
+	}
+	
 	public Printer(Context context){
 		Log.i(LOG_TAG, "Hyri ne klasen Printer");
 		
