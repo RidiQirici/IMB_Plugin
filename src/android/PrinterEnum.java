@@ -4,5 +4,6 @@ public enum PrinterEnum {
     WOOSIM,
     ZEBRA,
     BIXOLON,
-    PC700
+    PC700,
+    PDA3505
 }

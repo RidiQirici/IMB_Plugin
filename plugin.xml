@@ -2,7 +2,7 @@
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
     xmlns:android="http://schemas.android.com/apk/res/android"
     id="imb.ridiqirici.plugin.cordova.universal"
-    version="1.0.9">
+    version="1.0.10">
 
   <name>IMB_Plugin</name>
   <description>Plugin per printimet me pajisjet mobile</description>
@@ -33,6 +33,7 @@
 	<source-file src="src/android/PrinterWoosim.java" target-dir="src/imb/ridiqirici/plugin/cordova/universal" />
 	<source-file src="src/android/PrinterZebra.java" target-dir="src/imb/ridiqirici/plugin/cordova/universal" />
 	<source-file src="src/android/PrinterPC700.java" target-dir="src/imb/ridiqirici/plugin/cordova/universal" />
+	<source-file src="src/android/PrinterPDA3505.java" target-dir="src/imb/ridiqirici/plugin/cordova/universal" />
     <config-file target="res/xml/config.xml" parent="/*">
       <feature name="Plugin">
         <param name="android-package" value="imb.ridiqirici.plugin.cordova.universal.Plugin" />
@@ -45,6 +46,7 @@
     <source-file src="src/android/lib/woosimprinter_bt.jar" target-dir="libs" framework="true"/>
 	<source-file src="src/android/lib/pc700Print.jar" target-dir="libs" framework="true"/>
 	<source-file src="src/android/lib/ZSDK_ANDROID_API.jar" target-dir="libs" framework="true"/>
+	<source-file src="src/android/lib/pda3505Print.jar" target-dir="libs" framework="true"/>
   </platform>
 
 </plugin>
