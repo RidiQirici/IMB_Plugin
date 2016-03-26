@@ -19,13 +19,13 @@ public class KrijuesPrinter {
 				Log.i(LOG_TAG, "Krijimi i printeri ZEBRA");
 				printerKrijuar =  new PrinterZebra(contex);
 				break;
-			case PC700:
+			/*case PC700:
 				Log.i(LOG_TAG, "Krijimi i printeri PC700");
 				printerKrijuar =  new PrinterPC700(contex);
-				break;
+				break;*/
 			case PDA3505:
 				Log.i(LOG_TAG, "Krijimi i printeri PDA3505");
-				printerKrijuar =  new PrinterPC700(contex);
+				printerKrijuar =  new PrinterPDA3505 (contex);
 				break;
 			default:
 				break;
