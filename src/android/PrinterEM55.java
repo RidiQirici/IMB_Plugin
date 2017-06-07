@@ -5,7 +5,7 @@ import rego.printlib.export.regoPrinter;
 import android.content.Context;
 import android.util.Log;
 import android.widget.Toast;
-import android.serialport.DeviceControl;
+//import android.serialport.DeviceControl;
 
 public class PrinterEM55 extends Printer{
 
@@ -67,10 +67,11 @@ public class PrinterEM55 extends Printer{
 	}	
 
 	private boolean krijoLidhjeMePajisje(){
-		setState();
+		
 		try {
-			deviceControl = new DeviceControl(DeviceControl.PowerType.MAIN_AND_EXPAND, 73,4);
-			deviceControl.PowerOnDevice();
+			/*deviceControl = new DeviceControl(DeviceControl.PowerType.MAIN_AND_EXPAND, 73,4);
+			deviceControl.PowerOnDevice();*/
+			setState();
 			return true;
         } catch (IOException e) {
 			throw e;
@@ -79,7 +80,7 @@ public class PrinterEM55 extends Printer{
 
     private void prishLidhje() {
         try {
-            deviceControl.PowerOffDevice();
+            /*deviceControl.PowerOffDevice();*/
         } catch (IOException e) {
            throw e;
         }
