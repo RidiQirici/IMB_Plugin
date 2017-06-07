@@ -36,6 +36,7 @@ public class PrinterEM55 extends Printer{
 		return  printoTextProcedure(60, 40, textPerPrintim);
 	}
 
+	@Override
 	public Mesazh printoText(String textPerPrintim, Integer wight, Integer hight) {
 		Log.i(LOG_TAG, "Hyri ne metoden printoText(String textPerPrintim)");
 		return  printoTextProcedure(wight, hight, textPerPrintim);

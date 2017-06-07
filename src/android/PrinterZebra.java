@@ -29,9 +29,16 @@ public class PrinterZebra extends Printer {
 		return  printoTextProcedure(adresa, textPerPrintim);
 	}
 
+	@Override
 	public Mesazh printoText(String textPerPrintim) {
 		Log.i(LOG_TAG, "Hyri ne metoden printoText(String textPerPrintim)");
 		return  printoTextProcedure(super.getAdresaPajisjes(), textPerPrintim);
+	}
+
+	@Override
+	public Mesazh printoText(String textPerPrintim, Integer wight, Integer hight) {
+		Log.i(LOG_TAG, "Hyri ne metoden printoText(String textPerPrintim, Integer wight, Integer hight)");
+		return  printoTextProcedure("", textPerPrintim);
 	}
 
 	private Mesazh printoTextProcedure(String adresa, String textPerPrintim){

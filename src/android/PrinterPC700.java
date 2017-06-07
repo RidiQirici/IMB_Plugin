@@ -24,8 +24,15 @@ public class PrinterPC700 extends Printer {
 		return  printoTextProcedure(adresa, textPerPrintim);
 	}
 
+	@Override
 	public Mesazh printoText(String textPerPrintim) {
 		Log.i(LOG_TAG, "Hyri ne metoden printoText(String textPerPrintim)");
+		return  printoTextProcedure("", textPerPrintim);
+	}
+
+	@Override
+	public Mesazh printoText(String textPerPrintim, Integer wight, Integer hight) {
+		Log.i(LOG_TAG, "Hyri ne metoden printoText(String textPerPrintim, Integer wight, Integer hight)");
 		return  printoTextProcedure("", textPerPrintim);
 	}
 

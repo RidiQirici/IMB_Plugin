@@ -57,5 +57,8 @@ public abstract class Printer {
 	}
 
 	public abstract Mesazh printoText(String textPerPrintim) ;
+	
 	public abstract Mesazh printoText(String adresa, String textPerPrintim) ;
+
+	public abstract Mesazh printoText(String textPerPrintim, Integer wight, Integer hight) ;
 }

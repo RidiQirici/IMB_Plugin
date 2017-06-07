@@ -29,6 +29,12 @@ public class PrinterPDA3505 extends Printer {
 		Log.i(LOG_TAG, "Hyri ne metoden printoText(String adresa, String textPerPrintim)");
 		return  printoTextProcedure(adresa, textPerPrintim);
 	}
+
+	@Override
+	public Mesazh printoText(String textPerPrintim, Integer wight, Integer hight) {
+		Log.i(LOG_TAG, "Hyri ne metoden printoText(String textPerPrintim, Integer wight, Integer hight)");
+		return  printoTextProcedure("", textPerPrintim);
+	}
 	
 	private Mesazh printoTextProcedure(String adresa, String textPerPrintim){
 		Mesazh pergjigje = null;
