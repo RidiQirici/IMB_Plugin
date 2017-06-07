@@ -62,7 +62,7 @@ public class PrinterEM55 extends Printer{
 				}
 				em55.CON_PageEnd(getState(), 0);
 				Toast.makeText(this.context, "Printimi perfundoi me sukses!", Toast.LENGTH_LONG).show();
-				Log.e(LOG_TAG, "Printimi perfundoi me sukses!");
+				Log.i(LOG_TAG, "Printimi perfundoi me sukses!");
 				pergjigje = new Mesazh(true, "Printimi perfundoi me sukses!");
 				return pergjigje;
 			}
@@ -82,6 +82,7 @@ public class PrinterEM55 extends Printer{
 
 	private int checkState(){
 		state = em55.CON_ConnectDevices("RG-E487", "/dev/ttyMT1:115200:1:1", 200);
+		Log.i(LOG_TAG, state.toString());
 		return state;
 	}
 
