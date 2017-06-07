@@ -15,7 +15,7 @@ public class PrinterEM55 extends Printer{
 	
 	private Context context = null;
 	private int state = 0;
-	private DeviceControl deviceControl;
+	//private DeviceControl deviceControl;
 
 	public PrinterEM55(Context context){
 		super();
