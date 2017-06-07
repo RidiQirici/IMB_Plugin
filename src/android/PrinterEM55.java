@@ -11,13 +11,15 @@ public class PrinterEM55 extends Printer{
 
 	private static final String LOG_TAG = "EM55_PRINTER";
 	
-	private ApplicationContext context = null;
+	private Context context = null;
+	private ApplicationContext contextApp = null;
 	private Integer state = 0;
 
 	public PrinterEM55(Context context){
 		super();
-		this.context = new ApplicationContext(context);
-		this.context.setObject();
+		this.context = context;
+		this.contextApp = new ApplicationContext(context);
+		this.contextApp.setObject();
 		Log.i(LOG_TAG, "Hyri ne klasen PrinterEM55");
 	}
 
@@ -44,20 +46,20 @@ public class PrinterEM55 extends Printer{
 		try {
 			if (checkState() > 0){
 				Toast.makeText(this.context, "Lidhja me printerin u krye me sukses!", Toast.LENGTH_LONG).show();
-				this.context.getObject().CON_PageStart(getState(), false, wight, hight);
+				this.contextApp.getObject().CON_PageStart(getState(), false, wight, hight);
 				{
 					//Left Alignment
-					this.context.getObject().ASCII_CtrlAlignType(getState(), 0);
+					this.contextApp.getObject().ASCII_CtrlAlignType(getState(), 0);
 					//Oposite color false
-					this.context.getObject().ASCII_CtrlOppositeColor(getState(), false);
+					this.contextApp.getObject().ASCII_CtrlOppositeColor(getState(), false);
 					//Thick false
-					this.context.getObject().ASCII_PrintBuffer(getState(), new byte[] { 0x1b, 0x45, 0x00 }, 3);
+					this.contextApp.getObject().ASCII_PrintBuffer(getState(), new byte[] { 0x1b, 0x45, 0x00 }, 3);
 					//WIGHT, HIGHT, THICK, UNDERLINE, SMALL
-					this.context.getObject().ASCII_PrintString(getState(), 0, 0, 0, 0, 0, textPerPrintim, "gb2312");
-					this.context.getObject().ASCII_CtrlFeedLines(getState(), 1);
-					this.context.getObject().ASCII_CtrlPrintCRLF(getState(), 1);
+					this.contextApp.getObject().ASCII_PrintString(getState(), 0, 0, 0, 0, 0, textPerPrintim, "gb2312");
+					this.contextApp.getObject().ASCII_CtrlFeedLines(getState(), 1);
+					this.contextApp.getObject().ASCII_CtrlPrintCRLF(getState(), 1);
 				}
-				this.context.getObject().CON_PageEnd(getState(), 0);
+				this.contextApp.getObject().CON_PageEnd(getState(), 0);
 				Toast.makeText(this.context, "Printimi perfundoi me sukses!", Toast.LENGTH_LONG).show();
 				Log.i(LOG_TAG, "Printimi perfundoi me sukses!");
 				pergjigje = new Mesazh(true, "Printimi perfundoi me sukses!");
@@ -78,7 +80,7 @@ public class PrinterEM55 extends Printer{
 	}	
 
 	private Integer checkState(){
-		state = this.context.getObject().CON_ConnectDevices("RG-E487", "/dev/ttyMT1:115200:73:4", 200);
+		state = this.contextApp.getObject().CON_ConnectDevices("RG-E487", "/dev/ttyMT1:115200:73:4", 200);
 		Log.i(LOG_TAG, "STATUSI PORTES " + state.toString());
 		return state;
 	}
