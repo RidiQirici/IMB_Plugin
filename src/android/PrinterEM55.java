@@ -81,8 +81,8 @@ public class PrinterEM55 extends Printer{
 	}	
 
 	private Integer checkState(){
-		state = em55.CON_ConnectDevices("RG-E487", "/dev/ttyMT1:115200:1:1", 200);
-		Log.i(LOG_TAG, state.toString());
+		state = em55.CON_ConnectDevices("RG-E487", "/dev/ttyMT1:115200:73:4", 200);
+		Log.i(LOG_TAG, "STATUSI PORTES " + state.toString());
 		return state;
 	}
 
