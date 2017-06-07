@@ -25,7 +25,11 @@ public class KrijuesPrinter {
 				break;*/
 			case PDA3505:
 				Log.i(LOG_TAG, "Krijimi i printeri PDA3505");
-				printerKrijuar =  new PrinterPDA3505 (contex);
+				printerKrijuar =  new PrinterPDA3505(contex);
+				break;
+			case EM55:
+				Log.i(LOG_TAG, "Krijimi i printeri EM55");
+				printerKrijuar =  new PrinterEM55(contex);
 				break;
 			default:
 				break;

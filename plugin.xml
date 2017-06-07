@@ -26,27 +26,28 @@
   <platform name="android"> 
 
     <source-file src="src/android/Plugin.java" target-dir="src/imb/ridiqirici/plugin/cordova/universal" />
-	<source-file src="src/android/KrijuesPrinter.java" target-dir="src/imb/ridiqirici/plugin/cordova/universal" />
-	<source-file src="src/android/Mesazh.java" target-dir="src/imb/ridiqirici/plugin/cordova/universal" />
-	<source-file src="src/android/Printer.java" target-dir="src/imb/ridiqirici/plugin/cordova/universal" />
-	<source-file src="src/android/PrinterEnum.java" target-dir="src/imb/ridiqirici/plugin/cordova/universal" />
-	<source-file src="src/android/PrinterWoosim.java" target-dir="src/imb/ridiqirici/plugin/cordova/universal" />
-	<source-file src="src/android/PrinterZebra.java" target-dir="src/imb/ridiqirici/plugin/cordova/universal" />
-	<!-- <source-file src="src/android/PrinterPC700.java" target-dir="src/imb/ridiqirici/plugin/cordova/universal" /> -->
-	<source-file src="src/android/PrinterPDA3505.java" target-dir="src/imb/ridiqirici/plugin/cordova/universal" />
-    <config-file target="res/xml/config.xml" parent="/*">
-      <feature name="Plugin">
-        <param name="android-package" value="imb.ridiqirici.plugin.cordova.universal.Plugin" />
-      </feature>
-    </config-file>
+    <source-file src="src/android/KrijuesPrinter.java" target-dir="src/imb/ridiqirici/plugin/cordova/universal" />
+    <source-file src="src/android/Mesazh.java" target-dir="src/imb/ridiqirici/plugin/cordova/universal" />
+    <source-file src="src/android/Printer.java" target-dir="src/imb/ridiqirici/plugin/cordova/universal" />
+    <source-file src="src/android/PrinterEnum.java" target-dir="src/imb/ridiqirici/plugin/cordova/universal" />
+    <source-file src="src/android/PrinterWoosim.java" target-dir="src/imb/ridiqirici/plugin/cordova/universal" />
+    <source-file src="src/android/PrinterZebra.java" target-dir="src/imb/ridiqirici/plugin/cordova/universal" />
+    <source-file src="src/android/PrinterEM55.java" target-dir="src/imb/ridiqirici/plugin/cordova/universal" />
+    <!-- <source-file src="src/android/PrinterPC700.java" target-dir="src/imb/ridiqirici/plugin/cordova/universal" /> -->
+    <source-file src="src/android/PrinterPDA3505.java" target-dir="src/imb/ridiqirici/plugin/cordova/universal" />
+      <config-file target="res/xml/config.xml" parent="/*">
+        <feature name="Plugin">
+          <param name="android-package" value="imb.ridiqirici.plugin.cordova.universal.Plugin" />
+        </feature>
+      </config-file>
 
-    <config-file target="AndroidManifest.xml" parent="/manifest">
-    </config-file>
+      <config-file target="AndroidManifest.xml" parent="/manifest">
+      </config-file>
 
     <source-file src="src/android/lib/woosimprinter_bt.jar" target-dir="libs" framework="true"/>
-	<!-- <source-file src="src/android/lib/pc700Print.jar" target-dir="libs" framework="true"/> -->
-	<source-file src="src/android/lib/ZSDK_ANDROID_API.jar" target-dir="libs" framework="true"/>
-	<source-file src="src/android/lib/pda3505Print.jar" target-dir="libs" framework="true"/>
+    <!-- <source-file src="src/android/lib/pc700Print.jar" target-dir="libs" framework="true"/> -->
+    <source-file src="src/android/lib/ZSDK_ANDROID_API.jar" target-dir="libs" framework="true"/>
+    <source-file src="src/android/lib/pda3505Print.jar" target-dir="libs" framework="true"/>
+    <source-file src="src/android/lib/regoPrintLibV3.0.05.jar" target-dir="libs" framework="true"/>
   </platform>
-
 </plugin>

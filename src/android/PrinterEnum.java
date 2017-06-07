@@ -5,5 +5,6 @@ public enum PrinterEnum {
     ZEBRA,
     BIXOLON,
     PC700,
-    PDA3505
+    PDA3505,
+    EM55
 }
