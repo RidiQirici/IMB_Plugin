@@ -9,19 +9,15 @@ import android.widget.Toast;
 
 public class PrinterEM55 extends Printer{
 
-	private regoPrinter em55;
-	
 	private static final String LOG_TAG = "EM55_PRINTER";
 	
 	private Context context = null;
 	private Integer state = 0;
-	//private DeviceControl deviceControl;
 
 	public PrinterEM55(Context context){
 		super();
 		this.context = context;
 		Log.i(LOG_TAG, "Hyri ne klasen PrinterEM55");
-		em55 = new regoPrinter(this.context);
 	}
 
 	@Override
@@ -45,7 +41,8 @@ public class PrinterEM55 extends Printer{
 	private Mesazh printoTextProcedure(Integer wight, Integer hight, String textPerPrintim){
 		Mesazh pergjigje = null;
 		try {
-			if (checkState() > 0){
+			regoPrinter em55 = new regoPrinter();
+			if (checkState(em55) > 0){
 				Toast.makeText(this.context, "Lidhja me printerin u krye me sukses!", Toast.LENGTH_LONG).show();
 				em55.CON_PageStart(getState(), false, wight, hight);
 				{
@@ -80,7 +77,7 @@ public class PrinterEM55 extends Printer{
 		}
 	}	
 
-	private Integer checkState(){
+	private Integer checkState(regoPrinter em55){
 		state = em55.CON_ConnectDevices("RG-E487", "/dev/ttyMT1:115200:73:4", 200);
 		Log.i(LOG_TAG, "STATUSI PORTES " + state.toString());
 		return state;
