@@ -11,7 +11,7 @@ public class PrinterEM55 extends Printer{
 
 	private static final String LOG_TAG = "EM55_PRINTER";
 	
-	private Context context = null;
+	private ApplicationContext context = null;
 	private Integer state = 0;
 
 	public PrinterEM55(Context context){
