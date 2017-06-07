@@ -10,7 +10,7 @@ import java.util.List;
 
 import rego.printlib.export.regoPrinter;
 
-public class ApplicationContext {
+public class ApplicationContext extends Application {
     private regoPrinter printer;
     private int myState = 0;
     private String printName = "RG-MTP58B";
@@ -18,6 +18,12 @@ public class ApplicationContext {
     private static Context context;
     private boolean labelmark = true;
 
+    @Override
+    public void onCreate() {
+        super.onCreate();
+        context = getApplicationContext();
+    }
+    
     public ApplicationContext(Context context) {
         this.context = context;
     }
@@ -25,7 +31,7 @@ public class ApplicationContext {
     public Context getContext() {
         return context;
     }
-    
+
     public regoPrinter getObject() {
         return printer;
     }
