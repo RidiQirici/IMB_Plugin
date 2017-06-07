@@ -60,7 +60,15 @@ public class PrinterEM55 extends Printer{
 					em55.ASCII_CtrlPrintCRLF(getState(), 1);
 				}
 				em55.CON_PageEnd(getState(), 0);
+				Toast.makeText(this.context, "Printimi perfundoi me sukses!", Toast.LENGTH_LONG).show();
+				Log.e(LOG_TAG, "Printimi perfundoi me sukses!");
+				pergjigje = new Mesazh(true, "Printimi perfundoi me sukses!");
+				return pergjigje;
 			}
+			Toast.makeText(this.context, "Deshtoi lidhja me pajisjen e printimit!", Toast.LENGTH_LONG).show();
+			Log.e(LOG_TAG, "Deshtoi lidhja me pajisjen e printimit!");
+			pergjigje = new Mesazh(false, "Deshtoi lidhja me pajisjen e printimit!");
+			return pergjigje;
 		}
 		catch(Exception e)
 		{
