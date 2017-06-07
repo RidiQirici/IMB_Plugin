@@ -10,45 +10,25 @@ import java.util.List;
 
 import rego.printlib.export.regoPrinter;
 
-public class ApplicationContext extends Application {
+public class ApplicationContext {
     private regoPrinter printer;
     private int myState = 0;
     private String printName = "RG-MTP58B";
     private int alignTypetext;
     private static Context context;
     private boolean labelmark = true;
-    private static ApplicationContext instance = null;
 
-    public static ApplicationContext getInstance() {
-        if (null == instance) {
-            instance = new ApplicationContext();
-        }
-        return instance;
-
-    }
-    public ApplicationContext() {
+    public ApplicationContext(Context context) {
+        this.context = context;
     }
     
-    public static Context getContext() {
+    public Context getContext() {
         return context;
     }
-
+    
     public regoPrinter getObject() {
         return printer;
     }
-
-    @Override
-    public void onCreate() {
-
-        super.onCreate();
-        context = getApplicationContext();
-        instance = this;
-    }
-
-    public int getAlignType() {
-        return alignTypetext;
-    }
-
     public void setObject() {
         printer = new regoPrinter(this);
     }

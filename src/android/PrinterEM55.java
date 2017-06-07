@@ -16,7 +16,7 @@ public class PrinterEM55 extends Printer{
 
 	public PrinterEM55(Context context){
 		super();
-		this.context = (ApplicationContext) context;
+		this.context = new ApplicationContext(context);
 		this.context.setObject();
 		Log.i(LOG_TAG, "Hyri ne klasen PrinterEM55");
 	}
