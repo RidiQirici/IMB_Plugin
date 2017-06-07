@@ -45,7 +45,7 @@ public class PrinterEM55 extends Printer{
 	private Mesazh printoTextProcedure(Integer wight, Integer hight, String textPerPrintim){
 		Mesazh pergjigje = null;
 		try {
-			if (krijoLidhjeMePajisje()){
+			if (checkState() > 0){
 				Toast.makeText(this.context, "Lidhja me printerin u krye me sukses!", Toast.LENGTH_LONG).show();
 				em55.CON_PageStart(getState(), false, wight, hight);
 				{
@@ -80,22 +80,8 @@ public class PrinterEM55 extends Printer{
 		}
 	}	
 
-	private boolean krijoLidhjeMePajisje(){
-		try {
-			/*deviceControl = new DeviceControl(DeviceControl.PowerType.MAIN_AND_EXPAND, 73,4);
-			deviceControl.PowerOnDevice();*/
-			setState();
-			return true;
-        } catch (Exception e) {
-			throw e;
-        }
+	private int checkState(){
+		return em55.CON_ConnectDevices("RG-E487", "/dev/ttyMT1:115200:1:1", 200);
 	}
 
-	private void setState(){
-		state = em55.CON_ConnectDevices("RG-E487", "/dev/ttyMT1:115200:1:1", 200);
-	}
-
-	private int getState(){
-		return state;
-	}
 }
