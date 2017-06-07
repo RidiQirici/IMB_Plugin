@@ -14,7 +14,7 @@ public class PrinterEM55 extends Printer{
 	private static final String LOG_TAG = "EM55_PRINTER";
 	
 	private Context context = null;
-	private int state = 0;
+	private Integer state = 0;
 	//private DeviceControl deviceControl;
 
 	public PrinterEM55(Context context){
@@ -80,13 +80,13 @@ public class PrinterEM55 extends Printer{
 		}
 	}	
 
-	private int checkState(){
+	private Integer checkState(){
 		state = em55.CON_ConnectDevices("RG-E487", "/dev/ttyMT1:115200:1:1", 200);
 		Log.i(LOG_TAG, state.toString());
 		return state;
 	}
 
-	private int getState(){
+	private Integer getState(){
 		return state;
 	}
 }
