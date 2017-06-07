@@ -73,24 +73,15 @@ public class PrinterEM55 extends Printer{
 	}	
 
 	private boolean krijoLidhjeMePajisje(){
-		
 		try {
 			/*deviceControl = new DeviceControl(DeviceControl.PowerType.MAIN_AND_EXPAND, 73,4);
 			deviceControl.PowerOnDevice();*/
 			setState();
 			return true;
-        } catch (IOException e) {
+        } catch (Exception e) {
 			throw e;
         }
 	}
-
-    private void prishLidhje() {
-        try {
-            /*deviceControl.PowerOffDevice();*/
-        } catch (IOException e) {
-           throw e;
-        }
-    }
 
 	private void setState(){
 		state = em55.CON_ConnectDevices("RG-E487", "/dev/ttyMT1:115200:1:1", 200);

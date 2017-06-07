@@ -58,8 +58,8 @@ public class Plugin extends CordovaPlugin {
         	Log.i(LOG_TAG, "Krijimi i printerit sipas llojit me parameter per gjatesine dhe gjeresine e printimit");
         	Printer printeri = KrijuesPrinter.krijoPrinter(context, PrinterEnum.valueOf(args.getString(0)));
             String label = args.getString(1);
-            Interger wight = Integer.parseInt(args.getString(2));
-			Interger hight = Integer.parseInt(args.getString(3));
+            Integer wight = Integer.parseInt(args.getString(2));
+			Integer hight = Integer.parseInt(args.getString(3));
         	Mesazh pergjigje = printeri.printoText(label, wight, hight);
         	if (pergjigje.isStatusi())
         	{
