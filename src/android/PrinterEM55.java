@@ -29,7 +29,13 @@ public class PrinterEM55 extends Printer{
 		Log.i(LOG_TAG, "Hyri ne metoden printoText(String adresa, String textPerPrintim)");
 		return  printoTextProcedure(60, 40, textPerPrintim);
 	}
-	
+
+	@Override
+	public Mesazh printoText(String textPerPrintim) {
+		Log.i(LOG_TAG, "Hyri ne metoden printoText(String textPerPrintim)");
+		return  printoTextProcedure(60, 40, textPerPrintim);
+	}
+
 	public Mesazh printoText(String textPerPrintim, Integer wight, Integer hight) {
 		Log.i(LOG_TAG, "Hyri ne metoden printoText(String textPerPrintim)");
 		return  printoTextProcedure(wight, hight, textPerPrintim);
@@ -53,7 +59,7 @@ public class PrinterEM55 extends Printer{
 					em55.ASCII_CtrlFeedLines(getState(), 1);
 					em55.ASCII_CtrlPrintCRLF(getState(), 1);
 				}
-				em55.CON_PageEnd(getState(), context.getPrintway());
+				em55.CON_PageEnd(getState(), 0);
 				prishLidhje();
 			}
 		}
