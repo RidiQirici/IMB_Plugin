@@ -41,7 +41,8 @@ public class PrinterEM55 extends Printer{
 	private Mesazh printoTextProcedure(Integer wight, Integer hight, String textPerPrintim){
 		Mesazh pergjigje = null;
 		try {
-			regoPrinter em55 = new regoPrinter();
+			Toast.makeText(this.context, "Po kryehet lidhja...", Toast.LENGTH_LONG).show();
+			regoPrinter em55 = new regoPrinter(this.context);
 			if (checkState(em55) > 0){
 				Toast.makeText(this.context, "Lidhja me printerin u krye me sukses!", Toast.LENGTH_LONG).show();
 				em55.CON_PageStart(getState(), false, wight, hight);
