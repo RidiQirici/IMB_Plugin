@@ -60,7 +60,6 @@ public class PrinterEM55 extends Printer{
 					em55.ASCII_CtrlPrintCRLF(getState(), 1);
 				}
 				em55.CON_PageEnd(getState(), 0);
-				prishLidhje();
 			}
 		}
 		catch(Exception e)
