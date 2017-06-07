@@ -81,7 +81,11 @@ public class PrinterEM55 extends Printer{
 	}	
 
 	private int checkState(){
-		return em55.CON_ConnectDevices("RG-E487", "/dev/ttyMT1:115200:1:1", 200);
+		state = em55.CON_ConnectDevices("RG-E487", "/dev/ttyMT1:115200:1:1", 200);
+		return state;
 	}
 
+	private int getState(){
+		return state;
+	}
 }
