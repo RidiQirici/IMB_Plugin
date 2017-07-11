@@ -34,6 +34,11 @@
     <source-file src="src/android/PrinterZebra.java" target-dir="src/imb/ridiqirici/plugin/cordova/universal" />
     <source-file src="src/android/PrinterEM55.java" target-dir="src/imb/ridiqirici/plugin/cordova/universal" />
     <source-file src="src/android/ApplicationContext.java" target-dir="src/imb/ridiqirici/plugin/cordova/universal" />
+
+    <source-file src="src/android/lib/arm64-v8a/libserialportprinter.so" target-dir="lib"/>
+    <source-file src="src/android/lib/arm64-v8a/libserialportprinter.so" target-dir="lib"/>
+    <source-file src="src/android/lib/arm64-v8a/libserialportprinter.so" target-dir="lib"/>
+
     <!-- <source-file src="src/android/PrinterPC700.java" target-dir="src/imb/ridiqirici/plugin/cordova/universal" /> -->
     <source-file src="src/android/PrinterPDA3505.java" target-dir="src/imb/ridiqirici/plugin/cordova/universal" />
       <config-file target="res/xml/config.xml" parent="/*">
@@ -49,6 +54,6 @@
     <!-- <source-file src="src/android/lib/pc700Print.jar" target-dir="libs" framework="true"/> -->
     <source-file src="src/android/lib/ZSDK_ANDROID_API.jar" target-dir="libs" framework="true"/>
     <source-file src="src/android/lib/pda3505Print.jar" target-dir="libs" framework="true"/>
-    <source-file src="src/android/lib/regoPrintLibV3.0.05.jar" target-dir="libs" framework="true"/>
+    <source-file src="src/android/lib/regoPrintLibV3.0.05(1).jar" target-dir="libs" framework="true"/>
   </platform>
 </plugin>
