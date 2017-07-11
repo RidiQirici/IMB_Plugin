@@ -38,7 +38,7 @@
     <!-- <source-file src="src/android/lib/arm64-v8a/libserialportprinter.so" target-dir="lib/arm64-v8a"/>
     <source-file src="src/android/lib/armeabi/libserialportprinter.so" target-dir="lib/armeabi"/>
     <source-file src="src/android/lib/armeabi-v7a/libserialportprinter.so" target-dir="lib/armeabi-v7a"/>
-    <source-file src="src/android/lib/libserialportprinter.so" target-dir="lib"/>
+    <source-file src="src/android/lib/libserialportprinter.so" target-dir="lib"/> -->
     <!-- <source-file src="src/android/PrinterPC700.java" target-dir="src/imb/ridiqirici/plugin/cordova/universal" /> -->
     <source-file src="src/android/PrinterPDA3505.java" target-dir="src/imb/ridiqirici/plugin/cordova/universal" />
       <config-file target="res/xml/config.xml" parent="/*">
