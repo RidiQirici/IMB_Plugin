@@ -78,9 +78,7 @@ public class Plugin extends CordovaPlugin {
             Log.i(LOG_TAG, "Krijimi i printerit per printimin me barcode");
         	Printer printeri = KrijuesPrinter.krijoPrinter(context, PrinterEnum.valueOf(args.getString(0)));
             String label = args.getString(1);
-            Integer wight = Integer.parseInt(args.getString(2));
-			Integer hight = Integer.parseInt(args.getString(3));
-        	Mesazh pergjigje = printeri.printoBarcode(label, wight, hight);
+        	Mesazh pergjigje = printeri.printoBarcode(label);
         	if (pergjigje.isStatusi())
         	{
         		Log.i(LOG_TAG, pergjigje.getMesazhi());
