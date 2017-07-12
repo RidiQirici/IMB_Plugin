@@ -80,7 +80,7 @@ public class PrinterEM55 extends Printer{
 	}	
 
 	private Integer checkState(){
-		state = this.contextApp.getObject().CON_ConnectDevices("RG-PM488", "/dev/ttyMT1:115200:73:4", 200);
+		state = this.contextApp.getObject().CON_ConnectDevices("RG-MTP58B", "/dev/ttyMT1:115200:73:4", 200);
 		Log.i(LOG_TAG, "STATUSI PORTES " + state.toString());
 		return state;
 	}
