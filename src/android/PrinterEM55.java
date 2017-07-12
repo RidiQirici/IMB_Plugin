@@ -81,7 +81,7 @@ public class PrinterEM55 extends Printer{
 
 	private Integer checkState(){
         Log.i(LOG_TAG, "Po tenton te lidhet me pajisjen...");
-		state = context.getObject().CON_ConnectDevices("RG-E487", "/dev/ttyMT1:115200", 200);
+		state = this.context.getObject().CON_ConnectDevices("RG-E487", "/dev/ttyMT1:115200", 200);
 		Log.i(LOG_TAG, "STATUSI PORTES " + state.toString());
 		return state;
 	}
