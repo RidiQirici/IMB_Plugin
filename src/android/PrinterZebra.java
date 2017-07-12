@@ -10,6 +10,7 @@ import android.content.Context;
 import android.os.Environment;
 import android.util.Log;
 import android.widget.Toast;
+import java.lang.*;
 
 public class PrinterZebra extends Printer {
 
@@ -39,7 +40,12 @@ public class PrinterZebra extends Printer {
 	public Mesazh printoText(String textPerPrintim, Integer wight, Integer hight) {
 		Log.i(LOG_TAG, "Hyri ne metoden printoText(String textPerPrintim, Integer wight, Integer hight)");
 		return  printoTextProcedure("", textPerPrintim);
-	}
+    }
+    
+    @Override
+	public Mesazh printoBarcode(String textPerPrintim) {
+		throw new java.lang.UnsupportedOperationException("Not supported yet.");
+    }
 
 	private Mesazh printoTextProcedure(String adresa, String textPerPrintim){
 		Mesazh pergjigje = null;

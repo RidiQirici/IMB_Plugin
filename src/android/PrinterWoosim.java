@@ -5,6 +5,7 @@ import com.woosim.bt.*;
 import android.content.Context;
 import android.util.Log;
 import android.widget.Toast;
+import java.lang.*;
 
 public class PrinterWoosim extends Printer{
 
@@ -45,6 +46,11 @@ public class PrinterWoosim extends Printer{
 		Log.i(LOG_TAG, "Hyri ne metoden printoText(String textPerPrintim, Integer wight, Integer hight)");
 		return  printoTextProcedure("", textPerPrintim);
 	}
+
+    @Override
+	public Mesazh printoBarcode(String textPerPrintim) {
+		throw new java.lang.UnsupportedOperationException("Not supported yet.");
+    }
 
 	private Mesazh printoTextProcedure(String adresa, String textPerPrintim){
 		Mesazh pergjigje = null;

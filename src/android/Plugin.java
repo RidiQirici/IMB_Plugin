@@ -12,7 +12,8 @@ public class Plugin extends CordovaPlugin {
 
 	public static final String PRINT_TEXT = "printText";
 	public static final String PRINT_TEXT_MEMAC = "printTextMeMac";
-	public static final String PRINT_TEXT_MEPERMASA = "printTextMePermasa";
+    public static final String PRINT_TEXT_MEPERMASA = "printTextMePermasa";
+    public static final String PRINT_BARCODE = "printBarcode";
 	private static final String LOG_TAG = "PLUGIN_IMB";
 	
     @Override
@@ -72,6 +73,25 @@ public class Plugin extends CordovaPlugin {
         		callbackContext.error(pergjigje.getMesazhi());
         		return false;
         	}
+        }
+        else if (PRINT_BARCODE.equals(action)){
+            Log.i(LOG_TAG, "Krijimi i printerit per printimin me barcode");
+        	Printer printeri = KrijuesPrinter.krijoPrinter(context, PrinterEnum.valueOf(args.getString(0)));
+            String label = args.getString(1);
+            Integer wight = Integer.parseInt(args.getString(2));
+			Integer hight = Integer.parseInt(args.getString(3));
+        	Mesazh pergjigje = printeri.printoBarcode(label, wight, hight);
+        	if (pergjigje.isStatusi())
+        	{
+        		Log.i(LOG_TAG, pergjigje.getMesazhi());
+        		callbackContext.success(pergjigje.getMesazhi());
+        		return true;
+        	}
+        	else{
+        		Log.e(LOG_TAG, pergjigje.getMesazhi());
+        		callbackContext.error(pergjigje.getMesazhi());
+        		return false;
+            }
         }
         return false;
     }

@@ -5,6 +5,7 @@ import com.pda3505.printer.PrinterClassSerialPort;
 import android.content.Context;
 import android.util.Log;
 import android.widget.Toast;
+import java.lang.*;
 
 public class PrinterPDA3505 extends Printer {
 	
@@ -35,7 +36,12 @@ public class PrinterPDA3505 extends Printer {
 		Log.i(LOG_TAG, "Hyri ne metoden printoText(String textPerPrintim, Integer wight, Integer hight)");
 		return  printoTextProcedure("", textPerPrintim);
 	}
-	
+    
+    @Override
+	public Mesazh printoBarcode(String textPerPrintim) {
+		throw new java.lang.UnsupportedOperationException("Not supported yet.");
+    }
+
 	private Mesazh printoTextProcedure(String adresa, String textPerPrintim){
 		Mesazh pergjigje = null;
 		Log.i(LOG_TAG, "Hyri ne metoden printoTextProcedure(String adresa, String textPerPrintim)");
