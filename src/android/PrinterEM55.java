@@ -6,6 +6,7 @@ import android.content.Context;
 import android.util.Log;
 import android.widget.Toast;
 import java.lang.*;
+import java.io.IOException;
 
 public class PrinterEM55 extends Printer{
 
