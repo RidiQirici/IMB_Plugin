@@ -1,4 +1,4 @@
-package utils;
+package imb.ridiqirici.plugin.cordova.universal;
 
 import java.io.BufferedWriter;
 import java.io.File;
