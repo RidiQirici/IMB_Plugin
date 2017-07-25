@@ -72,8 +72,11 @@ public class PrinterEM55 extends Printer{
 				Toast.makeText(this.context, "Printimi perfundoi me sukses!", Toast.LENGTH_LONG).show();
 				Log.i(LOG_TAG, "Printimi perfundoi me sukses!");
                 pergjigje = new Mesazh(true, "Printimi perfundoi me sukses!");
-                onDestroy();
-				return pergjigje;
+                boolean mbyllPajisje = onDestroy();
+                if (mbyllPajisje)
+                    return pergjigje;
+                else 
+                    return new Mesazh(true, "Printimi perfundoi me sukses! Pajisja nuk u mund te shkeputet nga lidhja...");
 			}
 			Toast.makeText(this.context, "Deshtoi lidhja me pajisjen e printimit!", Toast.LENGTH_LONG).show();
 			Log.e(LOG_TAG, "Deshtoi lidhja me pajisjen e printimit!");
@@ -108,8 +111,12 @@ public class PrinterEM55 extends Printer{
 				this.contextApp.getObject().CON_PageEnd(getState(), 0);
 				Toast.makeText(this.context, "Printimi perfundoi me sukses!", Toast.LENGTH_LONG).show();
 				Log.i(LOG_TAG, "Printimi perfundoi me sukses!");
-				pergjigje = new Mesazh(true, "Printimi perfundoi me sukses!");
-				return pergjigje;
+                pergjigje = new Mesazh(true, "Printimi perfundoi me sukses!");
+                boolean mbyllPajisje = onDestroy();
+                if (mbyllPajisje)
+                    return pergjigje;
+                else 
+                    return new Mesazh(true, "Printimi perfundoi me sukses! Pajisja nuk u mund te shkeputet nga lidhja...");
 			}
 			Toast.makeText(this.context, "Deshtoi lidhja me pajisjen e printimit!", Toast.LENGTH_LONG).show();
 			Log.e(LOG_TAG, "Deshtoi lidhja me pajisjen e printimit!");
@@ -134,13 +141,16 @@ public class PrinterEM55 extends Printer{
         try {
             DevCtrl.PowerOnMTDevice();
         } catch (IOException e) {
+            Toast.makeText(this.context, e.toString(), Toast.LENGTH_LONG).show();
             Log.e(LOG_TAG, e.toString());
+            state = 0;
+            return state;
         }
 		Log.i(LOG_TAG, "STATUSI PORTES " + state.toString());
 		return state;
     }
     
-    protected void onDestroy() {
+    protected boolean onDestroy() {
 		try {
 			if (isTT43) {
 				DevCtrl.PowerOffDevice();
@@ -148,8 +158,11 @@ public class PrinterEM55 extends Printer{
 				DevCtrl.PowerOffMTDevice();
 			}
 		} catch (IOException e) {
-			Log.e(LOG_TAG, e.toString());
-		}
+            Toast.makeText(this.context, e.toString(), Toast.LENGTH_LONG).show();
+            Log.e(LOG_TAG, e.toString());
+            return false;
+        }
+        return true;
 	}
 
 	private Integer getState(){
