@@ -2,7 +2,7 @@
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
     xmlns:android="http://schemas.android.com/apk/res/android"
     id="imb.ridiqirici.plugin.cordova.universal"
-    version="1.0.14">
+    version="1.4.0">
 
   <name>IMB_Plugin</name>
   <description>Plugin per printimet me pajisjet mobile</description>
@@ -34,6 +34,7 @@
     <source-file src="src/android/PrinterZebra.java" target-dir="src/imb/ridiqirici/plugin/cordova/universal" />
     <source-file src="src/android/PrinterEM55.java" target-dir="src/imb/ridiqirici/plugin/cordova/universal" />
     <source-file src="src/android/ApplicationContext.java" target-dir="src/imb/ridiqirici/plugin/cordova/universal" />
+    <source-file src="src/android/DeviceControl.java" target-dir="src/imb/ridiqirici/plugin/cordova/universal" />
 
     <source-file src="src/android/lib/arm64-v8a/libserialportprinter.so" target-dir="libs/arm64-v8a"/>
     <source-file src="src/android/lib/armeabi/libserialportprinter.so" target-dir="libs/armeabi"/>

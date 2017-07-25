@@ -14,6 +14,8 @@ public class PrinterEM55 extends Printer{
 	private Context context = null;
 	private ApplicationContext contextApp = null;
 	private Integer state = 0;
+    private DeviceControl DevCtrl;
+    private boolean isTT43 = false;
 
 	public PrinterEM55(Context context){
 		super();
@@ -68,7 +70,8 @@ public class PrinterEM55 extends Printer{
 				this.contextApp.getObject().CON_PageEnd(getState(), 0);
 				Toast.makeText(this.context, "Printimi perfundoi me sukses!", Toast.LENGTH_LONG).show();
 				Log.i(LOG_TAG, "Printimi perfundoi me sukses!");
-				pergjigje = new Mesazh(true, "Printimi perfundoi me sukses!");
+                pergjigje = new Mesazh(true, "Printimi perfundoi me sukses!");
+                onDestroy();
 				return pergjigje;
 			}
 			Toast.makeText(this.context, "Deshtoi lidhja me pajisjen e printimit!", Toast.LENGTH_LONG).show();
@@ -123,9 +126,29 @@ public class PrinterEM55 extends Printer{
 
 	private Integer checkState(){
         Log.i(LOG_TAG, "Po tenton te lidhet me pajisjen...");
-		state = this.contextApp.getObject().CON_ConnectDevices("RG-E487", "/dev/ttyMT1:115200", 200);
+        state = this.contextApp.getObject().CON_ConnectDevices("RG-E487", "/dev/ttyMT1:115200", 200);
+        DevCtrl = new DeviceControl(DeviceControl.powerPathKT);
+        DevCtrl.setGpio(94);
+        isTT43 = false;
+        try {
+            DevCtrl.PowerOnMTDevice();
+        } catch (IOException e) {
+            Log.e(LOG_TAG, e.toString());
+        }
 		Log.i(LOG_TAG, "STATUSI PORTES " + state.toString());
 		return state;
+    }
+    
+    protected void onDestroy() {
+		try {
+			if (isTT43) {
+				DevCtrl.PowerOffDevice();
+			} else {
+				DevCtrl.PowerOffMTDevice();
+			}
+		} catch (IOException e) {
+			Log.e(LOG_TAG, e.toString());
+		}
 	}
 
 	private Integer getState(){

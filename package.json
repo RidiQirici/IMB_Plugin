@@ -1,6 +1,6 @@
 {
   "name": "imb_plugin",
-  "version": "1.3.2",
+  "version": "1.4.0",
   "description": "Librari per IMB per te printuar",
   "main": "www/imb_plugin.js",
   "scripts": {
