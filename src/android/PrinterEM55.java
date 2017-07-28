@@ -35,19 +35,19 @@ public class PrinterEM55 extends Printer{
 	@Override
 	public Mesazh printoText(String textPerPrintim) {
 		Log.i(LOG_TAG, "Hyri ne metoden printoText(String textPerPrintim)");
-		return  printoTextProcedure(60, 40, textPerPrintim);
+		return  printoTextProcedure(60, 40, "PRINTIM TEST PRINTIM TEST PRINTIM TEST PRINTIM TEST PRINTIM TEST PRINTIM TEST PRINTIM TEST PRINTIM TEST PRINTIM TEST");
 	}
 
 	@Override
 	public Mesazh printoText(String textPerPrintim, Integer wight, Integer hight) {
 		Log.i(LOG_TAG, "Hyri ne metoden printoText(String textPerPrintim, Integer wight, Integer hight)");
-		return  printoTextProcedure(wight, hight, textPerPrintim);
+		return  printoTextProcedure(wight, hight, "PRINTIM TEST PRINTIM TEST PRINTIM TEST PRINTIM TEST PRINTIM TEST PRINTIM TEST PRINTIM TEST PRINTIM TEST PRINTIM TEST");
     }
     
     @Override
 	public Mesazh printoBarcode(String textPerPrintim) {
 		Log.i(LOG_TAG, "Hyri ne metoden printoBarcode(String textPerPrintim, Integer wight, Integer hight)");
-		return  printoBarCodeProcedure(60, 40, textPerPrintim);
+		return  printoBarCodeProcedure(60, 40, "0123456789");
     }
 
 	private Mesazh printoTextProcedure(Integer wight, Integer hight, String textPerPrintim){
