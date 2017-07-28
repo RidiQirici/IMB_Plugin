@@ -72,10 +72,10 @@ public class PrinterEM55 extends Printer{
 				Toast.makeText(this.context, "Printimi perfundoi me sukses!", Toast.LENGTH_LONG).show();
 				Log.i(LOG_TAG, "Printimi perfundoi me sukses!");
                 pergjigje = new Mesazh(true, "Printimi perfundoi me sukses!");
-                boolean mbyllPajisje = onDestroy();
+                /*boolean mbyllPajisje = onDestroy();
                 if (mbyllPajisje)
                     return pergjigje;
-                else 
+                else */
                     return new Mesazh(true, "Printimi perfundoi me sukses! Pajisja nuk u mund te shkeputet nga lidhja...");
 			}
 			Toast.makeText(this.context, "Deshtoi lidhja me pajisjen e printimit!", Toast.LENGTH_LONG).show();
@@ -112,10 +112,10 @@ public class PrinterEM55 extends Printer{
 				Toast.makeText(this.context, "Printimi perfundoi me sukses!", Toast.LENGTH_LONG).show();
 				Log.i(LOG_TAG, "Printimi perfundoi me sukses!");
                 pergjigje = new Mesazh(true, "Printimi perfundoi me sukses!");
-                boolean mbyllPajisje = onDestroy();
+                /*boolean mbyllPajisje = onDestroy();
                 if (mbyllPajisje)
                     return pergjigje;
-                else 
+                else */
                     return new Mesazh(true, "Printimi perfundoi me sukses! Pajisja nuk u mund te shkeputet nga lidhja...");
 			}
 			Toast.makeText(this.context, "Deshtoi lidhja me pajisjen e printimit!", Toast.LENGTH_LONG).show();
