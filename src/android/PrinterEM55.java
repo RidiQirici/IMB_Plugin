@@ -35,19 +35,19 @@ public class PrinterEM55 extends Printer{
 	@Override
 	public Mesazh printoText(String textPerPrintim) {
 		Log.i(LOG_TAG, "Hyri ne metoden printoText(String textPerPrintim)");
-		return  printoTextProcedure(60, 40, "PRINTIM TEST PRINTIM TEST PRINTIM TEST PRINTIM TEST PRINTIM TEST PRINTIM TEST PRINTIM TEST PRINTIM TEST PRINTIM TEST");
+		return  printoTextProcedure(60, 40, textPerPrintim);
 	}
 
 	@Override
 	public Mesazh printoText(String textPerPrintim, Integer wight, Integer hight) {
 		Log.i(LOG_TAG, "Hyri ne metoden printoText(String textPerPrintim, Integer wight, Integer hight)");
-		return  printoTextProcedure(wight, hight, "PRINTIM TEST PRINTIM TEST PRINTIM TEST PRINTIM TEST PRINTIM TEST PRINTIM TEST PRINTIM TEST PRINTIM TEST PRINTIM TEST");
+		return  printoTextProcedure(wight, hight, textPerPrintim);
     }
     
     @Override
 	public Mesazh printoBarcode(String textPerPrintim) {
 		Log.i(LOG_TAG, "Hyri ne metoden printoBarcode(String textPerPrintim, Integer wight, Integer hight)");
-		return  printoBarCodeProcedure(60, 40, "0123456789");
+		return  printoBarCodeProcedure(60, 40, textPerPrintim);
     }
 
 	private Mesazh printoTextProcedure(Integer wight, Integer hight, String textPerPrintim){
@@ -76,7 +76,7 @@ public class PrinterEM55 extends Printer{
                 if (mbyllPajisje)
                     return pergjigje;
                 else */
-                    return new Mesazh(true, "Printimi perfundoi me sukses! Pajisja nuk u mund te shkeputet nga lidhja...");
+                    return new Mesazh(true, "Printimi perfundoi me sukses!");
 			}
 			Toast.makeText(this.context, "Deshtoi lidhja me pajisjen e printimit!", Toast.LENGTH_LONG).show();
 			Log.e(LOG_TAG, "Deshtoi lidhja me pajisjen e printimit!");
@@ -116,7 +116,7 @@ public class PrinterEM55 extends Printer{
                 if (mbyllPajisje)
                     return pergjigje;
                 else */
-                    return new Mesazh(true, "Printimi perfundoi me sukses! Pajisja nuk u mund te shkeputet nga lidhja...");
+                    return new Mesazh(true, "Printimi perfundoi me sukses!");
 			}
 			Toast.makeText(this.context, "Deshtoi lidhja me pajisjen e printimit!", Toast.LENGTH_LONG).show();
 			Log.e(LOG_TAG, "Deshtoi lidhja me pajisjen e printimit!");
