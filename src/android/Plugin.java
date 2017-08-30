@@ -135,7 +135,7 @@ public class Plugin extends CordovaPlugin {
         		return false;
             }
         }
-        else if (printTextSpecial.equals(action)){
+        else if (PRINT_TEXT_SPECIAL.equals(action)){
             Log.i(LOG_TAG, "Krijimi i printerit per printimin me karaktere speciale");
         	Printer printeri = KrijuesPrinter.krijoPrinter(context, PrinterEnum.valueOf(args.getString(0)));
             String label = args.getString(1);
