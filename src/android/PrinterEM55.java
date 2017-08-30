@@ -76,7 +76,7 @@ public class PrinterEM55 extends Printer{
 					//Thick false
 					this.contextApp.getObject().ASCII_PrintBuffer(getState(), new byte[] { 0x1b, 0x45, 0x00 }, 3);
 					//WIGHT, HIGHT, THICK, UNDERLINE, SMALL
-					this.contextApp.getObject().ASCII_PrintString(getState(), 0, 0, 0, 0, small, textPerPrintim, "gb2312");
+					this.contextApp.getObject().ASCII_PrintString(getState(), 0, 0, 0, 0, small ? 1 : 0, textPerPrintim, "gb2312");
 					this.contextApp.getObject().ASCII_CtrlFeedLines(getState(), 1);
 					this.contextApp.getObject().ASCII_CtrlPrintCRLF(getState(), 1);
 				}
