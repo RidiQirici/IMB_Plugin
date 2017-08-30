@@ -143,7 +143,7 @@ public class Plugin extends CordovaPlugin {
             Integer y = Integer.parseInt(args.getString(3));
             Integer fontSize = Integer.parseInt(args.getString(4));
             Integer lineWidth = Integer.parseInt(args.getString(5));
-        	Mesazh pergjigje = printeri.printoTextSpecial(x, y, fontSize, lineWidth, label);
+        	Mesazh pergjigje = printeri.printoTextSpecial(label, x, y, fontSize, lineWidth);
         	if (pergjigje.isStatusi())
         	{
         		Log.i(LOG_TAG, pergjigje.getMesazhi());

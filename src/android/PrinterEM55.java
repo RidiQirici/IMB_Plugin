@@ -118,7 +118,7 @@ public class PrinterEM55 extends Printer{
 							72,
 							wight,
 							hight,
-							small, textPerPrintim);
+							small ? 1 : 0, textPerPrintim);
 				}
 				this.contextApp.getObject().CON_PageEnd(getState(), 0);
 				Toast.makeText(this.context, "Printimi perfundoi me sukses!", Toast.LENGTH_LONG).show();
