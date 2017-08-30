@@ -138,7 +138,7 @@
         );
     };
 
-    ImbPrintPlugin.prototype.printBarcode = function (pajisja, text, successCallback, errorCallback) {
+    ImbPrintPlugin.prototype.printBarcode = function (pajisja, text, align, small, successCallback, errorCallback) {
         
         if (successCallback === null) {
             successCallback = function (response) {
@@ -167,7 +167,7 @@
             errorCallback,
             "Plugin",
             "printBarcode",
-            [pajisja, text]
+            [pajisja, text, align, small]
         );
     };
 
