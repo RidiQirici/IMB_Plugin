@@ -39,16 +39,28 @@ public class PrinterWoosim extends Printer{
 	public Mesazh printoText(String textPerPrintim) {
 		Log.i(LOG_TAG, "Hyri ne metoden printoText(String textPerPrintim)");
 		return  printoTextProcedure(super.getAdresaPajisjes(), textPerPrintim);
-	}
+    }
+    
+    @Override
+	public Mesazh printoText(String textPerPrintim, Integer align, Boolean small) {
+		Log.i(LOG_TAG, "Hyri ne metoden printoText(String textPerPrintim, Integer align, Boolean small)");
+		return  printoTextProcedure("", textPerPrintim);
+    }
+
 
 	@Override
-	public Mesazh printoText(String textPerPrintim, Integer wight, Integer hight) {
-		Log.i(LOG_TAG, "Hyri ne metoden printoText(String textPerPrintim, Integer wight, Integer hight)");
+	public Mesazh printoText(String textPerPrintim, Integer wight, Integer hight, Integer align, Boolean small) {
+		Log.i(LOG_TAG, "Hyri ne metoden printoText(String textPerPrintim, Integer wight, Integer hight, Integer align, Boolean small)");
 		return  printoTextProcedure("", textPerPrintim);
 	}
 
     @Override
-	public Mesazh printoBarcode(String textPerPrintim) {
+	public Mesazh printoBarcode(String textPerPrintim, Integer align, Boolean small) {
+		throw new java.lang.UnsupportedOperationException("Not supported yet.");
+    }
+
+    @Override
+	public Mesazh printoTextSpecial(String textPerPrintim, Integer x, Integer y, Integer fontSize, Integer lineWidth) {
 		throw new java.lang.UnsupportedOperationException("Not supported yet.");
     }
 

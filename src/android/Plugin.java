@@ -10,10 +10,12 @@ import android.util.Log;
 
 public class Plugin extends CordovaPlugin {
 
-	public static final String PRINT_TEXT = "printText";
+    public static final String PRINT_TEXT = "printText";
+    public static final String PRINT_TEXT_PARAMETRA = "printTextParametra";
 	public static final String PRINT_TEXT_MEMAC = "printTextMeMac";
     public static final String PRINT_TEXT_MEPERMASA = "printTextMePermasa";
     public static final String PRINT_BARCODE = "printBarcode";
+    public static final String PRINT_TEXT_SPECIAL = "printTextSpecial";
 	private static final String LOG_TAG = "PLUGIN_IMB";
 	
     @Override
@@ -25,6 +27,25 @@ public class Plugin extends CordovaPlugin {
         	Printer printeri = KrijuesPrinter.krijoPrinter(context, PrinterEnum.valueOf(args.getString(0)));
             String label = args.getString(1);
         	Mesazh pergjigje = printeri.printoText(label);
+        	if (pergjigje.isStatusi())
+        	{
+        		Log.i(LOG_TAG, pergjigje.getMesazhi());
+        		callbackContext.success(pergjigje.getMesazhi());
+        		return true;
+        	}
+        	else{
+        		Log.e(LOG_TAG, pergjigje.getMesazhi());
+        		callbackContext.error(pergjigje.getMesazhi());
+        		return false;
+        	}
+        }
+        else if (PRINT_TEXT_PARAMETRA.equals(action)) {
+        	Log.i(LOG_TAG, "Krijimi i printerit sipas llojit");
+        	Printer printeri = KrijuesPrinter.krijoPrinter(context, PrinterEnum.valueOf(args.getString(0)));
+            String label = args.getString(1);
+            Integer align = Integer.parseInt(args.getString(2));
+            Boolean small = Boolean.parseBoolean(args.getString(3));
+        	Mesazh pergjigje = printeri.printoText(label, align, small);
         	if (pergjigje.isStatusi())
         	{
         		Log.i(LOG_TAG, pergjigje.getMesazhi());
@@ -60,8 +81,10 @@ public class Plugin extends CordovaPlugin {
         	Printer printeri = KrijuesPrinter.krijoPrinter(context, PrinterEnum.valueOf(args.getString(0)));
             String label = args.getString(1);
             Integer wight = Integer.parseInt(args.getString(2));
-			Integer hight = Integer.parseInt(args.getString(3));
-        	Mesazh pergjigje = printeri.printoText(label, wight, hight);
+            Integer hight = Integer.parseInt(args.getString(3));
+            Integer align = Integer.parseInt(args.getString(4));
+            Boolean small = Boolean.parseBoolean(args.getString(5));
+        	Mesazh pergjigje = printeri.printoText(label, wight, hight, align, small);
         	if (pergjigje.isStatusi())
         	{
         		Log.i(LOG_TAG, pergjigje.getMesazhi());
@@ -78,7 +101,49 @@ public class Plugin extends CordovaPlugin {
             Log.i(LOG_TAG, "Krijimi i printerit per printimin me barcode");
         	Printer printeri = KrijuesPrinter.krijoPrinter(context, PrinterEnum.valueOf(args.getString(0)));
             String label = args.getString(1);
-        	Mesazh pergjigje = printeri.printoBarcode(label);
+            Integer align = Integer.parseInt(args.getString(2));
+            Boolean small = Boolean.parseBoolean(args.getString(3));
+        	Mesazh pergjigje = printeri.printoBarcode(label, align, small);
+        	if (pergjigje.isStatusi())
+        	{
+        		Log.i(LOG_TAG, pergjigje.getMesazhi());
+        		callbackContext.success(pergjigje.getMesazhi());
+        		return true;
+        	}
+        	else{
+        		Log.e(LOG_TAG, pergjigje.getMesazhi());
+        		callbackContext.error(pergjigje.getMesazhi());
+        		return false;
+            }
+        }
+        else if (PRINT_BARCODE.equals(action)){
+            Log.i(LOG_TAG, "Krijimi i printerit per printimin me barcode");
+        	Printer printeri = KrijuesPrinter.krijoPrinter(context, PrinterEnum.valueOf(args.getString(0)));
+            String label = args.getString(1);
+            Integer align = Integer.parseInt(args.getString(2));
+            Boolean small = Boolean.parseBoolean(args.getString(3));
+        	Mesazh pergjigje = printeri.printoBarcode(label, align, small);
+        	if (pergjigje.isStatusi())
+        	{
+        		Log.i(LOG_TAG, pergjigje.getMesazhi());
+        		callbackContext.success(pergjigje.getMesazhi());
+        		return true;
+        	}
+        	else{
+        		Log.e(LOG_TAG, pergjigje.getMesazhi());
+        		callbackContext.error(pergjigje.getMesazhi());
+        		return false;
+            }
+        }
+        else if (printTextSpecial.equals(action)){
+            Log.i(LOG_TAG, "Krijimi i printerit per printimin me karaktere speciale");
+        	Printer printeri = KrijuesPrinter.krijoPrinter(context, PrinterEnum.valueOf(args.getString(0)));
+            String label = args.getString(1);
+            Integer x = Integer.parseInt(args.getString(2));
+            Integer y = Integer.parseInt(args.getString(3));
+            Integer fontSize = Integer.parseInt(args.getString(4));
+            Integer lineWidth = Integer.parseInt(args.getString(5));
+        	Mesazh pergjigje = printeri.printoTextSpecial(x, y, fontSize, lineWidth, label);
         	if (pergjigje.isStatusi())
         	{
         		Log.i(LOG_TAG, pergjigje.getMesazhi());

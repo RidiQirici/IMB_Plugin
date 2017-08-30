@@ -56,11 +56,15 @@ public abstract class Printer {
 		Toast.makeText(context, "Duke u lidhur me pajisjen " + getAdresaPajisjes(), Toast.LENGTH_LONG).show();
 	}
 
-	public abstract Mesazh printoText(String textPerPrintim) ;
+    public abstract Mesazh printoText(String textPerPrintim) ;
+    
+    public abstract Mesazh printoText(String textPerPrintim, Integer align, Boolean small) ;
 	
 	public abstract Mesazh printoText(String adresa, String textPerPrintim) ;
 
-    public abstract Mesazh printoText(String textPerPrintim, Integer wight, Integer hight) ;
+    public abstract Mesazh printoText(String textPerPrintim, Integer wight, Integer hight, Integer align, Boolean small) ;
     
-    public abstract Mesazh printoBarcode(String textPerPrintim) ;
+    public abstract Mesazh printoBarcode(String textPerPrintim, Integer align, Boolean small) ;
+
+    public abstract Mesazh printoTextSpecial(String textPerPrintim, Integer x, Integer y, Integer fontSize, Integer lineWidth) ;
 }

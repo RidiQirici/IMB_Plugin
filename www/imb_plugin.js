@@ -38,6 +38,39 @@
             [pajisja, text]
         );
     };
+
+    ImbPrintPlugin.prototype.printTextParametra = function (pajisja, text, align, small, successCallback, errorCallback) {
+        
+        if (successCallback === null) {
+            successCallback = function (response) {
+                console.log('Plugin.printTextParametra sukses: ' + response);
+            };
+        }
+        
+        if (errorCallback === null) {
+            errorCallback = function (error) {
+                console.error('Plugin.printTextParametra deshtim: ' + error);
+            };
+        }
+        
+        if (typeof errorCallback != "function") {
+            console.error("Plugin.printTextParametra failure: parametri deshtimit nuk eshte funksion");
+            return;
+        }
+        
+        if (typeof successCallback != "function") {
+            console.error("Plugin.printTextParametra failure: parametri callback i suksesit duhet te jete patjeter funksion");
+            return;
+        }
+        
+        exec(
+            successCallback,
+            errorCallback,
+            "Plugin",
+            "printTextParametra",
+            [pajisja, text, align, small]
+        );
+    };
 	
 	ImbPrintPlugin.prototype.printTextMeMac = function (pajisja, text, adresa, successCallback, errorCallback) {
         
@@ -135,6 +168,39 @@
             "Plugin",
             "printBarcode",
             [pajisja, text]
+        );
+    };
+
+    ImbPrintPlugin.prototype.printTextSpecial = function (pajisja, text, x, y, fontSize, lineWidth, successCallback, errorCallback) {
+        
+        if (successCallback === null) {
+            successCallback = function (response) {
+                console.log('Plugin.printTextSpecial sukses: ' + response);
+            };
+        }
+        
+        if (errorCallback === null) {
+            errorCallback = function (error) {
+                console.error('Plugin.printTextSpecial deshtim: ' + error);
+            };
+        }
+        
+        if (typeof errorCallback != "function") {
+            console.error("Plugin.printTextSpecial failure: parametri deshtimit nuk eshte funksion");
+            return;
+        }
+        
+        if (typeof successCallback != "function") {
+            console.error("Plugin.printTextSpecial failure: parametri callback i suksesit duhet te jete patjeter funksion");
+            return;
+        }
+        
+        exec(
+            successCallback,
+            errorCallback,
+            "Plugin",
+            "printTextSpecial",
+            [pajisja, text, x, y, fontSize, lineWidth]
         );
     };
 
