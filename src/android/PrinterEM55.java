@@ -149,7 +149,7 @@ public class PrinterEM55 extends Printer{
 		try {
 			if (checkState() > 0){
 				Toast.makeText(this.context, "Lidhja me printerin u krye me sukses!", Toast.LENGTH_LONG).show();
-				this.contextApp.getObject().CON_PageStart(getState(), false, wight, hight);
+				this.contextApp.getObject().CON_PageStart(getState(), true, wight, hight);
 				{
                     this.contextApp.getObject().DRAW_SetFillMode(false,0);
                     this.contextApp.getObject().DRAW_SetLineWidth(lineWidth);
