@@ -78,7 +78,8 @@ public class PrinterEM55 extends Printer{
 					//WIGHT, HIGHT, THICK, UNDERLINE, SMALL
 					this.contextApp.getObject().ASCII_PrintString(getState(), 0, 0, 0, 0, small ? 1 : 0, textPerPrintim, "gb2312");
 					this.contextApp.getObject().ASCII_CtrlFeedLines(getState(), 1);
-					this.contextApp.getObject().ASCII_CtrlPrintCRLF(getState(), 1);
+                    this.contextApp.getObject().ASCII_CtrlPrintCRLF(getState(), 1);
+                    this.contextApp.getObject().ASCII_CtrlAlignType(getState(), 0);
 				}
 				this.contextApp.getObject().CON_PageEnd(getState(), 0);
 				Toast.makeText(this.context, "Printimi perfundoi me sukses!", Toast.LENGTH_LONG).show();
@@ -118,7 +119,8 @@ public class PrinterEM55 extends Printer{
 							72,
 							wight,
 							hight,
-							small ? 1 : 0, textPerPrintim);
+                            small ? 1 : 0, textPerPrintim);
+                    this.contextApp.getObject().ASCII_CtrlAlignType(getState(), 0);
 				}
 				this.contextApp.getObject().CON_PageEnd(getState(), 0);
 				Toast.makeText(this.context, "Printimi perfundoi me sukses!", Toast.LENGTH_LONG).show();
