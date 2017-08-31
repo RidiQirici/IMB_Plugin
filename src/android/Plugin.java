@@ -139,11 +139,13 @@ public class Plugin extends CordovaPlugin {
             Log.i(LOG_TAG, "Krijimi i printerit per printimin me karaktere speciale");
         	Printer printeri = KrijuesPrinter.krijoPrinter(context, PrinterEnum.valueOf(args.getString(0)));
             String label = args.getString(1);
-            Integer x = Integer.parseInt(args.getString(2));
-            Integer y = Integer.parseInt(args.getString(3));
-            Integer fontSize = Integer.parseInt(args.getString(4));
-            Integer lineWidth = Integer.parseInt(args.getString(5));
-        	Mesazh pergjigje = printeri.printoTextSpecial(label, x, y, fontSize, lineWidth);
+            Integer width = Integer.parseInt(args.getString(2));
+            Integer height = Integer.parseInt(args.getString(3));
+            Integer x = Integer.parseInt(args.getString(4));
+            Integer y = Integer.parseInt(args.getString(5));
+            Integer fontSize = Integer.parseInt(args.getString(6));
+            Integer lineWidth = Integer.parseInt(args.getString(7));
+        	Mesazh pergjigje = printeri.printoTextSpecial(label, width, height, x, y, fontSize, lineWidth);
         	if (pergjigje.isStatusi())
         	{
         		Log.i(LOG_TAG, pergjigje.getMesazhi());

@@ -49,7 +49,7 @@ public class PrinterPDA3505 extends Printer {
     }
 
     @Override
-	public Mesazh printoTextSpecial(String textPerPrintim, Integer x, Integer y, Integer fontSize, Integer lineWidth) {
+	public Mesazh printoTextSpecial(String textPerPrintim, Integer width, Integer height, Integer x, Integer y, Integer fontSize, Integer lineWidth) {
 		throw new java.lang.UnsupportedOperationException("Not supported yet.");
     }
 

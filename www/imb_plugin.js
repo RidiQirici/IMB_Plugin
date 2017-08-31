@@ -171,7 +171,7 @@
         );
     };
 
-    ImbPrintPlugin.prototype.printTextSpecial = function (pajisja, text, x, y, fontSize, lineWidth, successCallback, errorCallback) {
+    ImbPrintPlugin.prototype.printTextSpecial = function (pajisja, text, width, height, x, y, fontSize, lineWidth, successCallback, errorCallback) {
         
         if (successCallback === null) {
             successCallback = function (response) {
@@ -200,7 +200,7 @@
             errorCallback,
             "Plugin",
             "printTextSpecial",
-            [pajisja, text, x, y, fontSize, lineWidth]
+            [pajisja, text, width, height, x, y, fontSize, lineWidth]
         );
     };
 

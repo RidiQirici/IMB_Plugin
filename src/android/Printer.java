@@ -66,5 +66,5 @@ public abstract class Printer {
     
     public abstract Mesazh printoBarcode(String textPerPrintim, Integer align, Boolean small) ;
 
-    public abstract Mesazh printoTextSpecial(String textPerPrintim, Integer x, Integer y, Integer fontSize, Integer lineWidth) ;
+    public abstract Mesazh printoTextSpecial(String textPerPrintim, Integer width, Integer height, Integer x, Integer y, Integer fontSize, Integer lineWidth) ;
 }
