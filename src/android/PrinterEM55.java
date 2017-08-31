@@ -59,7 +59,7 @@ public class PrinterEM55 extends Printer{
     @Override
 	public Mesazh printoTextSpecial(String textPerPrintim, Integer x, Integer y, Integer fontSize, Integer lineWidth) {
 		Log.i(LOG_TAG, "Hyri ne metoden printoTextSpecial(Integer x, Integer y, Integer fontSize, Integer lineWidth, String textPerPrintim)");
-		return  printoTextSpecialProcedure(360, 1200, x, y, fontSize, lineWidth, textPerPrintim);
+		return  printoTextSpecialProcedure(3600, 3600, x, y, fontSize, lineWidth, textPerPrintim);
     }
 
 	private Mesazh printoTextProcedure(Integer wight, Integer hight, Integer align, Boolean small, String textPerPrintim){
