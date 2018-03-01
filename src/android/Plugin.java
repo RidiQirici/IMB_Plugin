@@ -14,6 +14,7 @@ public class Plugin extends CordovaPlugin {
     public static final String PRINT_TEXT_PARAMETRA = "printTextParametra";
 	public static final String PRINT_TEXT_MEMAC = "printTextMeMac";
     public static final String PRINT_TEXT_MEPERMASA = "printTextMePermasa";
+    public static final String PRINT_TEXT_SIZE = "printTextSunMi";
     public static final String PRINT_BARCODE = "printBarcode";
     public static final String PRINT_TEXT_SPECIAL = "printTextSpecial";
 	private static final String LOG_TAG = "PLUGIN_IMB";
@@ -136,6 +137,26 @@ public class Plugin extends CordovaPlugin {
             }
         }
         else if (PRINT_TEXT_SPECIAL.equals(action)){
+            Log.i(LOG_TAG, "Krijimi i printerit per printimin me karaktere speciale");
+        	Printer printeri = KrijuesPrinter.krijoPrinter(context, PrinterEnum.valueOf(args.getString(0)));
+            String label = args.getString(1);
+            float size = Float.parseFloat(args.getString(2));
+            boolean isBold = Boolean.parseBoolean(args.getString(3));
+            boolean idUnderline = Boolean.parseBoolean(args.getString(4));
+        	Mesazh pergjigje = printeri.printText(label, size, isBold, idUnderline);
+        	if (pergjigje.isStatusi())
+        	{
+        		Log.i(LOG_TAG, pergjigje.getMesazhi());
+        		callbackContext.success(pergjigje.getMesazhi());
+        		return true;
+        	}
+        	else{
+        		Log.e(LOG_TAG, pergjigje.getMesazhi());
+        		callbackContext.error(pergjigje.getMesazhi());
+        		return false;
+            }
+        }
+        else if (PRINT_TEXT_SIZE.equals(action)){
             Log.i(LOG_TAG, "Krijimi i printerit per printimin me karaktere speciale");
         	Printer printeri = KrijuesPrinter.krijoPrinter(context, PrinterEnum.valueOf(args.getString(0)));
             String label = args.getString(1);

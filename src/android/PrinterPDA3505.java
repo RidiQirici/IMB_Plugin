@@ -37,6 +37,11 @@ public class PrinterPDA3505 extends Printer {
 		return  printoTextProcedure(adresa, textPerPrintim);
 	}
 
+    @Override
+	public Mesazh printoText(String textPerPrintim, float fontSize, boolean bold, boolean underline) {
+        throw new java.lang.UnsupportedOperationException("Not supported yet.");
+    }
+    
 	@Override
 	public Mesazh printoText(String textPerPrintim, Integer wight, Integer hight, Integer align, Boolean small) {
 		Log.i(LOG_TAG, "Hyri ne metoden printoText(String textPerPrintim, Integer wight, Integer hight, Integer align, Boolean small)");

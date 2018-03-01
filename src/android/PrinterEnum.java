@@ -6,5 +6,6 @@ public enum PrinterEnum {
     BIXOLON,
     PC700,
     PDA3505,
-    EM55
+    EM55, 
+    SUNMI
 }

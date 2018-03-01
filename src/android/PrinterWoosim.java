@@ -47,6 +47,10 @@ public class PrinterWoosim extends Printer{
 		return  printoTextProcedure("", textPerPrintim);
     }
 
+    @Override
+	public Mesazh printoText(String textPerPrintim, float fontSize, boolean bold, boolean underline) {
+        throw new java.lang.UnsupportedOperationException("Not supported yet.");
+	}
 
 	@Override
 	public Mesazh printoText(String textPerPrintim, Integer wight, Integer hight, Integer align, Boolean small) {

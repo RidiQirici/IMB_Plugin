@@ -44,6 +44,11 @@ public class PrinterPC700 extends Printer {
     }
 
     @Override
+	public Mesazh printoText(String textPerPrintim, float fontSize, boolean bold, boolean underline) {
+        throw new java.lang.UnsupportedOperationException("Not supported yet.");
+    }
+    
+    @Override
 	public Mesazh printoTextSpecial(String textPerPrintim, Integer width, Integer height, Integer x, Integer y, Integer fontSize, Integer lineWidth) {
 		throw new java.lang.UnsupportedOperationException("Not supported yet.");
     }
