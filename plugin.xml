@@ -70,7 +70,6 @@
     <source-file src="src/android/lib/ZSDK_ANDROID_API.jar" target-dir="libs" framework="true"/>
     <source-file src="src/android/lib/pda3505Print.jar" target-dir="libs" framework="true"/>
     <source-file src="src/android/lib/regoPrintLibV3.0.05(1).jar" target-dir="libs" framework="true"/>
-    <source-file src="src/android/lib/woyou.jar" target-dir="libs" framework="true"/>
     <source-file src="src/android/lib/core-3.3.0.jar" target-dir="libs" framework="true" />
   </platform>
 </plugin>
