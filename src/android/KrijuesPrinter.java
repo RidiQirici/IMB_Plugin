@@ -31,10 +31,10 @@ public class KrijuesPrinter {
 				Log.i(LOG_TAG, "Krijimi i printeri EM55");
 				printerKrijuar =  new PrinterEM55(contex);
                 break;
-            case SUNMI:
+            /*case SUNMI:
 				Log.i(LOG_TAG, "Krijimi i printeri SUNMI");
 				printerKrijuar =  new PrinterSunMi(contex);
-				break;
+				break;*/
 			default:
 				break;
 				

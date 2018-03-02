@@ -33,7 +33,6 @@
     <source-file src="src/android/PrinterWoosim.java" target-dir="src/imb/ridiqirici/plugin/cordova/universal" />
     <source-file src="src/android/PrinterZebra.java" target-dir="src/imb/ridiqirici/plugin/cordova/universal" />
     <source-file src="src/android/PrinterEM55.java" target-dir="src/imb/ridiqirici/plugin/cordova/universal" />
-    <source-file src="src/android/PrinterSunMi.java" target-dir="src/imb/ridiqirici/plugin/cordova/universal" />
     <source-file src="src/android/ApplicationContext.java" target-dir="src/imb/ridiqirici/plugin/cordova/universal" />
     <source-file src="src/android/DeviceControl.java" target-dir="src/imb/ridiqirici/plugin/cordova/universal" />
 
