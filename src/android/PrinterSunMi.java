@@ -12,9 +12,6 @@ import android.os.RemoteException;
 import android.util.Log;
 import android.widget.Toast;
 
-import com.sunmi.printerhelper.R;
-import com.sunmi.printerhelper.bean.TableItem;
-
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
@@ -27,7 +24,7 @@ public class PrinterSunMi extends Printer {
     private static final String SERVICE＿PACKAGE = "woyou.aidlservice.jiuiv5";
     private static final String SERVICE＿ACTION = "woyou.aidlservice.jiuiv5.IWoyouService";
     private static final String LOG_TAG = "SUNMI_PRINTER";
-    
+
     private IWoyouService woyouService;
 
     private Context context;
