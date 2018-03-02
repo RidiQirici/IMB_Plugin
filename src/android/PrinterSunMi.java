@@ -126,41 +126,7 @@ public class PrinterSunMi extends Printer {
             }
         };
     }
-
-    public List<String> getPrinterInfo(PrinterCallback printerCallback) {
-        if (woyouService == null) {
-            Toast.makeText(context,"Nuk eshte hapur service i printerit!",Toast.LENGTH_LONG).show();
-            return null;
-        }
-
-        List<String> info = new ArrayList<>();
-        try {
-            woyouService.getPrintedLength(generateCB(printerCallback));
-            info.add(woyouService.getPrinterSerialNo());
-            info.add(woyouService.getPrinterModal());
-            info.add(woyouService.getPrinterVersion());
-            info.add(printerCallback.getResult());
-            info.add("");
-            //info.add(woyouService.getServiceVersion());
-            PackageManager packageManager = context.getPackageManager();
-            try {
-                PackageInfo packageInfo = packageManager.getPackageInfo(SERVICE＿PACKAGE, 0);
-                if(packageInfo != null){
-                    info.add(packageInfo.versionName);
-                    info.add(packageInfo.versionCode+"");
-                }else{
-                    info.add("");info.add("");
-                }
-            } catch (PackageManager.NameNotFoundException e) {
-                e.printStackTrace();
-            }
-
-        } catch (RemoteException e) {
-            e.printStackTrace();
-        }
-        return info;
-    }
-
+    
     public void initPrinter() {
         if (woyouService == null) {
             Toast.makeText(context,"Printeri u hap me sukses!",Toast.LENGTH_LONG).show();
