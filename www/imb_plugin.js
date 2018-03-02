@@ -204,39 +204,6 @@
         );
     };
 
-    ImbPrintPlugin.prototype.printTextSunMi = function (pajisja, text, size, isbold, isunderline, successCallback, errorCallback) {
-        
-        if (successCallback === null) {
-            successCallback = function (response) {
-                console.log('Plugin.printTextSunMi sukses: ' + response);
-            };
-        }
-        
-        if (errorCallback === null) {
-            errorCallback = function (error) {
-                console.error('Plugin.printTextSunMi deshtim: ' + error);
-            };
-        }
-        
-        if (typeof errorCallback != "function") {
-            console.error("Plugin.printTextSunMi failure: parametri deshtimit nuk eshte funksion");
-            return;
-        }
-        
-        if (typeof successCallback != "function") {
-            console.error("Plugin.printTextSunMi failure: parametri callback i suksesit duhet te jete patjeter funksion");
-            return;
-        }
-        
-        exec(
-            successCallback,
-            errorCallback,
-            "Plugin",
-            "printTextSunMi",
-            [pajisja, text, size, isbold, isunderline]
-        );
-    };
-
     module.exports = new ImbPrintPlugin();
 };
 

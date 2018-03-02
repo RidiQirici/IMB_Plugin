@@ -77,27 +77,6 @@ public class Plugin extends CordovaPlugin {
         		return false;
         	}
         }
-		else if (PRINT_TEXT_MEPERMASA.equals(action)) {
-        	Log.i(LOG_TAG, "Krijimi i printerit sipas llojit me parameter per gjatesine dhe gjeresine e printimit");
-        	Printer printeri = KrijuesPrinter.krijoPrinter(context, PrinterEnum.valueOf(args.getString(0)));
-            String label = args.getString(1);
-            Integer wight = Integer.parseInt(args.getString(2));
-            Integer hight = Integer.parseInt(args.getString(3));
-            Integer align = Integer.parseInt(args.getString(4));
-            Boolean small = Boolean.parseBoolean(args.getString(5));
-        	Mesazh pergjigje = printeri.printoText(label, wight, hight, align, small);
-        	if (pergjigje.isStatusi())
-        	{
-        		Log.i(LOG_TAG, pergjigje.getMesazhi());
-        		callbackContext.success(pergjigje.getMesazhi());
-        		return true;
-        	}
-        	else{
-        		Log.e(LOG_TAG, pergjigje.getMesazhi());
-        		callbackContext.error(pergjigje.getMesazhi());
-        		return false;
-        	}
-        }
         else if (PRINT_BARCODE.equals(action)){
             Log.i(LOG_TAG, "Krijimi i printerit per printimin me barcode");
         	Printer printeri = KrijuesPrinter.krijoPrinter(context, PrinterEnum.valueOf(args.getString(0)));
