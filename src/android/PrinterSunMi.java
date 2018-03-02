@@ -26,7 +26,8 @@ import woyou.aidlservice.jiuiv5.IWoyouService;
 public class PrinterSunMi extends Printer {
     private static final String SERVICE＿PACKAGE = "woyou.aidlservice.jiuiv5";
     private static final String SERVICE＿ACTION = "woyou.aidlservice.jiuiv5.IWoyouService";
-
+    private static final String LOG_TAG = "SUNMI_PRINTER";
+    
     private IWoyouService woyouService;
 
     private Context context;
@@ -126,7 +127,7 @@ public class PrinterSunMi extends Printer {
             }
         };
     }
-    
+
     public void initPrinter() {
         if (woyouService == null) {
             Toast.makeText(context,"Printeri u hap me sukses!",Toast.LENGTH_LONG).show();
