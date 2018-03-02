@@ -1,3 +1,3 @@
-package com.sunmi.trans;
+package woyou.aidlservice.jiuiv5;
 
 parcelable TransBean;

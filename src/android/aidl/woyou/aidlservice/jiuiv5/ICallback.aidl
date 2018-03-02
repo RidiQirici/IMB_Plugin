@@ -23,4 +23,11 @@ interface ICallback {
 	* msg:	异常描述
 	*/
 	oneway void  onRaiseException(int code, String msg);
+	
+	/**
+	* 返回打印结果
+	* code：	异常代码
+	* msg:	异常描述
+	*/
+	oneway void  onPrintResult(int code, String msg);
 }

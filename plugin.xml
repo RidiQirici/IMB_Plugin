@@ -36,9 +36,19 @@
     <source-file src="src/android/PrinterSunMi.java" target-dir="src/imb/ridiqirici/plugin/cordova/universal" />
     <source-file src="src/android/ApplicationContext.java" target-dir="src/imb/ridiqirici/plugin/cordova/universal" />
     <source-file src="src/android/DeviceControl.java" target-dir="src/imb/ridiqirici/plugin/cordova/universal" />
-    <source-file src="src/android/aidl/woyou/aidlservice/jiuiv5/ICallback.aidl" target-dir="src/woyou/aidlservice/jiuiv5" />
-    <source-file src="src/android/aidl/woyou/aidlservice/jiuiv5/IWoyouService.aidl" target-dir="src/woyou/aidlservice/jiuiv5" />
-    <source-file src="src/android/aidl/com/sunmi/trans/TransBean.aidl" target-dir="src/com/sunmi/trans" />
+
+	<source-file src="src/android/aidl/com/sunmi/trans/TransBean.aidl" target-dir="src/woyou/aidlservice/jiuiv5/" />
+	<source-file src="src/android/aidl/woyou/aidlservice/jiuiv5/ICallback.aidl" target-dir="src/woyou/aidlservice/jiuiv5/" />
+	<source-file src="src/android/aidl/woyou/aidlservice/jiuiv5/ITax.aidl" target-dir="src/woyou/aidlservice/jiuiv5/" />
+	<source-file src="src/android/aidl/woyou/aidlservice/jiuiv5/IWoyouService.aidl" target-dir="src/woyou/aidlservice/jiuiv5/" />
+    
+	<source-file src="src/android/com/sunmi/printerhelper/BaseApp.java" target-dir="src/com/sunmi/printerhelper" />
+	<source-file src="src/android/com/sunmi/printerhelper/utils/AidlUtil.java" target-dir="src/com/sunmi/printerhelper/utils" />
+	<source-file src="src/android/com/sunmi/printerhelper/utils/PrinterCallback.java" target-dir="src/com/sunmi/printerhelper/utils" />
+	<source-file src="src/android/com/sunmi/printerhelper/utils/ESCUtil.java" target-dir="src/com/sunmi/printerhelper/utils" />   
+    <source-file src="src/android/com/sunmi/printerhelper/utils/BytesUtil.java" target-dir="src/com/sunmi/printerhelper/utils" />  
+    <source-file src="src/android/com/sunmi/printerhelper/bean/TableItem.java" target-dir="src/com/sunmi/printerhelper/bean" />
+	<source-file src="src/android/com/sunmi/trans/TransBean.java" target-dir="src/woyou/aidlservice/jiuiv5/" />
 
     <source-file src="src/android/lib/arm64-v8a/libserialportprinter.so" target-dir="libs/arm64-v8a"/>
     <source-file src="src/android/lib/armeabi/libserialportprinter.so" target-dir="libs/armeabi"/>
@@ -61,5 +71,6 @@
     <source-file src="src/android/lib/pda3505Print.jar" target-dir="libs" framework="true"/>
     <source-file src="src/android/lib/regoPrintLibV3.0.05(1).jar" target-dir="libs" framework="true"/>
     <source-file src="src/android/lib/woyou.jar" target-dir="libs" framework="true"/>
+    <source-file src="src/android/lib/core-3.3.0.jar" target-dir="libs" framework="true" />
   </platform>
 </plugin>
